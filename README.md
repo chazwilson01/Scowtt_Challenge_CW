@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scowtt Challenge - Movie Facts App
 
-## Getting Started
+A modern, dark-themed Next.js web application that allows users to sign in with Google OAuth and discover interesting facts about their favorite movies using OpenAI's API. Built with a component-based architecture and beautiful UI design.
 
-First, run the development server:
+## ✨ Features
+
+- 🔐 **Google OAuth Authentication** - Secure sign-in with Google
+- 👤 **User Profile Display** - Shows name, email, and profile photo
+- 🎬 **Favorite Movie Storage** - Save your favorite movie in the database
+- 🤖 **AI-Generated Movie Facts** - Unique facts powered by OpenAI GPT-3.5-turbo
+- 🔄 **Smart Fact Refresh** - Get new facts with manual refresh button
+- 🚪 **Logout Functionality** - Clean sign-out process
+- 🌙 **Dark Theme UI** - Modern, sleek dark interface with cyan accents
+- 📱 **Responsive Design** - Works perfectly on desktop and mobile
+- 🧩 **Component Architecture** - Modular, reusable React components
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15, React 18, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: NextAuth.js with Google Provider
+- **AI**: OpenAI GPT-3.5-turbo for movie facts
+- **Styling**: Tailwind CSS with custom animations and gradients
+- **Architecture**: Component-based with TypeScript interfaces
+
+## 📋 Prerequisites
+
+Before running this application, you'll need:
+
+1. **Node.js** (v18 or higher) - [Download here](https://nodejs.org/)
+2. **Database** - Choose one:
+   - **PostgreSQL** (recommended for production) - [Download here](https://www.postgresql.org/download/)
+   - **SQLite** (easier for development) - Built into Node.js
+
+> **Note**: Prisma is an ORM that works with databases - you still need a database engine (PostgreSQL/SQLite) running!
+> **API Keys**: All Google OAuth and OpenAI API keys are provided - no account setup needed!
+
+## 🚀 Step-by-Step Setup Instructions
+
+### Step 1: Clone and Install Dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository (if not already done)
+git clone <your-repo-url>
+cd movie-app
+
+# Install all dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 2: Install and Setup PostgreSQL
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 2.1 Install PostgreSQL
+- **Windows**: Download from [postgresql.org](https://www.postgresql.org/download/windows/)
+- **macOS**: Use Homebrew: `brew install postgresql`
+- **Linux**: `sudo apt-get install postgresql postgresql-contrib`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 2.2 Start PostgreSQL Service
+```bash
+# Windows (if installed as service, it starts automatically)
+# macOS/Linux
+brew services start postgresql
+# OR
+sudo systemctl start postgresql
+```
 
-## Learn More
+#### 2.3 Create Database
+```bash
+# Connect to PostgreSQL
+psql -U postgres
 
-To learn more about Next.js, take a look at the following resources:
+# Create database
+CREATE DATABASE movieapp;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Step 3: Google OAuth Setup
 
-## Deploy on Vercel
+### Step 4: Database Setup
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 4.1 Generate Prisma Client
+```bash
+npx prisma generate
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### 4.2 Push Database Schema
+```bash
+npx prisma db push
+```
+
+#### 4.3 Verify Database (Optional)
+```bash
+# Open Prisma Studio to view your database
+npx prisma studio
+```
+
+### Step 5: Run the Application
+
+#### 5.1 Start Development Server
+```bash
+npm run dev
+```
+
+#### 5.2 Access the Application
+Open your browser and go to: `http://localhost:3000`
+
