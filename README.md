@@ -1,6 +1,6 @@
 # Scowtt Challenge - Movie Facts App
 
-A modern, dark-themed Next.js web application that allows users to sign in with Google OAuth and discover interesting facts about their favorite movies using OpenAI's API. Built with a component-based architecture and beautiful UI design.
+# I have included the .env file in the repo for with all the keys. I am aware that is bad practice but assume you needed them somehow. Also included is my cursor chat log
 
 ## ✨ Features
 
