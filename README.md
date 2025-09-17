@@ -1,6 +1,6 @@
 # Scowtt Challenge - Movie Facts App
 
-# I have included the .env file in the repo for with all the keys. I am aware that is bad practice but assume you needed them somehow. Also included is my cursor chat log
+# I have included my cursor chat log
 
 ## ✨ Features
 
