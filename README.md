@@ -42,7 +42,7 @@ Before running this application, you'll need:
 
 ```bash
 # Clone the repository (if not already done)
-git clone <your-repo-url>
+git clone https://github.com/chazwilson01/Scowtt_Challenge_CW.git
 cd movie-app
 
 # Install all dependencies
